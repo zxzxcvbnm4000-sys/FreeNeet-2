@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Free Neet - باقات النت والدقائق</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+</head>
+<body>
+
+    <div class="bg-logo"></div>
+
+    <div class="container">
+        <header>
+            <h1 class="logo-text">Free <span>Neet</span></h1>
+            <p class="subtitle">اختر شبكتك وباقتك وواصل اشتراكك بسهولة</p>
+        </header>
+
+        <main class="card">
+            <form id="orderForm">
+                <!-- اختيار الشبكة -->
+                <div class="form-group">
+                    <label>اختر الشبكة:</label>
+                    <div class="network-selector">
+                        <label class="net-btn vodafone">
+                            <input type="radio" name="network" value="فودافون" required onchange="togglePasswordField()">
+                            <span>فودافون</span>
+                        </label>
+                        <label class="net-btn etisalat">
+                            <input type="radio" name="network" value="اتصالات" required onchange="togglePasswordField()">
+                            <span>اتصالات</span>
+                        </label>
+                        <label class="net-btn we">
+                            <input type="radio" name="network" value="WE" required onchange="togglePasswordField()">
+                            <span>WE</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- اختيار الباقة -->
+                <div class="form-group">
+                    <label for="package">اختر الباقة:</label>
+                    <select id="package" required>
+                        <option value="" disabled selected>-- اختر الباقة المناسبة --</option>
+                        <option value="باقة 10 جيجا">باقة 10 جيجا</option>
+                        <option value="باقة 20 جيجا">باقة 20 جيجا</option>
+                        <option value="باقة 40 جيجا">باقة 40 جيجا</option>
+                    </select>
+                </div>
+
+                <!-- رقم الهاتف -->
+                <div class="form-group">
+                    <label for="phone">رقم الهاتف:</label>
+                    <input type="tel" id="phone" placeholder="01XXXXXXXXX" pattern="01[0125][0-9]{8}" required>
+                </div>
+
+                <!-- كلمة المرور (تظهر فقط لو فودافون) -->
+                <div class="form-group hidden" id="passwordGroup">
+                    <label for="vfPassword">كلمة مرور أنا فودافون (Ana Vodafone):</label>
+                    <input type="password" id="vfPassword" placeholder="أدخل كلمة المرور">
+                </div>
+
+                <!-- زر الإرسال -->
+                <button type="submit" class="submit-btn">
+                    <span>طلب الباقة عبر الواتساب</span>
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
